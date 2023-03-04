@@ -35,23 +35,16 @@ def search_by_year_to_year():
         return render_template('year_to_year.html', film_count=film_count)
 
 
-@app.route('/rating/children')
-def search_by_rating_children():
-    data = search_by_rating(['G'])
-    film_count = len(data)
-    return render_template('rating.html', film_count=film_count, data=data)
+@app.route('/rating/<value>')
+def search_by_rating(value):
 
+    if value == 'children':
+        data = search_by_rating(['G'])
+    elif value == 'children':
+        data = search_by_rating(['G', 'PG', 'PG-13'])
+    elif value == 'children':
+        data = search_by_rating(['R', 'NC-17'])
 
-@app.route('/rating/family')
-def search_by_rating_family():
-    data = search_by_rating(['G', 'PG', 'PG-13'])
-    film_count = len(data)
-    return render_template('rating.html', film_count=film_count, data=data)
-
-
-@app.route('/rating/adult')
-def search_by_rating_adult():
-    data = search_by_rating(['R', 'NC-17'])
     film_count = len(data)
     return render_template('rating.html', film_count=film_count, data=data)
 
