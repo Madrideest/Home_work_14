@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL</title>
+</head>
+
+<body>
+    <div>
+        <p>Search by title</p>
+      <form action="/search">
+        <label>
+          <input type="search" name="s">
+            <input type="submit" value="Search!">
+        </label>
+      </form>
+    </div>
+    <div>
+        <p>Search by year to year</p>
+      <form action="/movie/year/to/year">
+        <label>
+          <input type="number" name="to">
+            <input type="number" name="after">
+            <input type="submit" value="Search!">
+        </label>
+      </form>
+    </div>
+</body>
+
+</html>

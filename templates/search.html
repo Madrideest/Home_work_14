@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+</head>
+
+<body>
+    <div>
+      <h2>Найдено фильмов: {{film_count}}</h2>
+    </div>
+    {% if film_count > 0 %}
+      {% for film in data %}
+        <div>
+          <p>Название фильма: {{film.title}}</p>
+          <p>Страна: {{film.country}}</p>
+          <p>Дата выхода: {{film.release_year}}</p>
+          <p>Жанр: {{film.genre}}</p>
+          <p>Описание: {{film.description}}</p>
+        </div>
+      {% endfor %}
+    {% endif %}
+</body>
+
+</html>
